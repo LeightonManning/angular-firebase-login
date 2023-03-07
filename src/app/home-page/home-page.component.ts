@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { UserInfo } from '../types';
 
 @Component({
   selector: 'app-home-page',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
+  user: UserInfo | null = null;
 
   constructor(
     private auth: AngularFireAuth,

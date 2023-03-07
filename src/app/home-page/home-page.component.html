@@ -1,4 +1,12 @@
 <h1>Home</h1>
-<p>Hello and welcome, you are logged in</p>
+<div *ngIf="user">
+    <p>Email Address: {{ user.email }}</p>
+    <p>Firebase Id: {{ user.id }}</p>
+    <p>You last logged in at: {{ user.lastSignInTime }}</p>
+    <p>Your name is {{ user.fullName }}</p>
+    <p>A little bit about you: {{ user.bio }}</p>
+
+
+</div>
 <button (click)="logOut()">Log out</button>
 
