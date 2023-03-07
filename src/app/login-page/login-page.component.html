@@ -1,0 +1,11 @@
+<h1>Login</h1>
+<p *ngIf="error">{{ error }}</p>
+<input
+    placeholder="Enter your email..."
+    [(ngModel)]="email" />
+<input 
+    type="password"
+    placeholder="Enter your password.."
+    [(ngModel)]="password" />
+<a routerLink="/create-account">Don't have an account? Create one</a>
+<button (click)="logIn()">Log In</button>

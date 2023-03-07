@@ -1,0 +1,8 @@
+<h1>Create Account</h1>
+<p *ngIf="error">{{ error }}</p>
+<input placeholder="Enter your email address..." [(ngModel)]="email">
+<input placeholder="Enter your password..." type="password" [(ngModel)]="password">
+<input placeholder="Re-enter your password" type="password" [(ngModel)]="confirmPassword">
+
+<a routerLink="/login">Already have an account? Log In</a>
+<button (click)="createAccount()">Create Account</button>
