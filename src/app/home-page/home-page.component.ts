@@ -16,6 +16,21 @@ export class HomePageComponent {
     private router: Router,
 
   ) { }
+
+  ngOnInit(): void {
+    this.auth.user.subscribe(firebaseUser => {
+      if(firebaseUser){
+      this.user = {
+        id: firebaseUser.uid,
+        email: firebaseUser.email || '',
+        lastSignInTime: firebaseUser.metadata.lastSignInTime || '',
+        fullName: '',
+        bio: '',
+
+      }
+    }
+    })
+  }
  
   logOut(): void {
     this.auth.signOut()
