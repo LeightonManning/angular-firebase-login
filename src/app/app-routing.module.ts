@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'
 import { AuthenticationGuard } from './authentication.guard';
 import { CreateAccountPageComponent } from './create-account-page/create-account-page.component';
 import { HomePageComponent } from './home-page/home-page.component';

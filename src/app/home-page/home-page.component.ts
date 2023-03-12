@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
@@ -14,6 +15,7 @@ export class HomePageComponent {
   constructor(
     private auth: AngularFireAuth,
     private router: Router,
+    private http: HttpClient,
 
   ) { }
 
@@ -26,8 +28,12 @@ export class HomePageComponent {
         lastSignInTime: firebaseUser.metadata.lastSignInTime || '',
         fullName: '',
         bio: '',
-
       }
+      this.http.get<{fullName: string, bio: string}>(`/api/users/${firebaseUser.uid}`)
+      .subscribe(userInfo => {
+        this.user!.fullName = userInfo.fullName;
+        this.user!.bio = userInfo.bio;
+      })
     }
     })
   }
