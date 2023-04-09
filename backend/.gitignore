@@ -45,3 +45,4 @@ Thumbs.db
 environment.ts
 environment.prod.ts
 credentials.json
+config.js

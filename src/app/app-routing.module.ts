@@ -6,9 +6,11 @@ import { CreateAccountPageComponent } from './create-account-page/create-account
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { UnauthenticatedGuard } from './unauthenticated.guard';
+import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [
   {path:'', component: HomePageComponent, canActivate:[AuthenticationGuard] },
+  {path:'chat', component: ChatComponent, canActivate:[AuthenticationGuard] },
   {path:'login', component: LoginPageComponent, canActivate:[UnauthenticatedGuard]},
   {path:'create-account', component: CreateAccountPageComponent, canActivate:[UnauthenticatedGuard] }
 ];
